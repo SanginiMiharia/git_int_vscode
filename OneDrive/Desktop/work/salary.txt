@@ -1,0 +1,76 @@
+import java.util.*;
+public class Main
+{
+    String name;
+    int bs;
+    String jb;
+    int sp;
+    // Salary(int a,String name,String jb,int sp)
+    // {
+    //     this.bs=a;
+    //     this.name=name;
+    //     this.jb=jb;
+    //     this.sp=sp;
+    // }
+    void salary(int bs, int sp,String jb)
+    {
+        float gs;
+        float ns;
+        float hra,da,ta,it,pf;
+        hra=bs*(10/100);
+        da=bs*(50/100);
+        ta=bs*(5/100);
+        if(jb=="Permanent")
+        {
+            gs=bs+hra+da+ta+sp;
+        }
+        else
+        {
+            gs= bs+ta;
+        }
+        System.out.println("Gross Salary= "+gs);
+        pf=gs*(12/100);
+        if(gs>100000)
+        {
+            it=gs*(30/100);
+            ns=gs-it-pf;
+            System.out.println("Net Salary="+ns);
+        }
+        else if(gs>50000)
+        {
+            it=gs*(10/100);
+            ns=gs-it-pf;
+            System.out.println("Net Salary="+ns);
+        }
+        else
+        {
+         System.out.println("No Tax");
+         ns=gs-pf;
+         System.out.println(ns);
+        }
+        
+    }
+    public static void main(String args[])
+    {
+       // String name;
+        // int bs;
+        // int sp;
+        // String jb;
+        Main s=new Main();
+        Scanner sc=new Scanner(System.in);
+        int bs=sc.nextInt();
+        int sp=sc.nextInt();
+        String jb=sc.nextLine();
+        String ss=sc.nextLine();
+        //System.out.println("jb"+jb);
+        String name=sc.nextLine();
+        
+        //System.out.println("name"+name);
+        //s.name;
+        //s.a;
+        //s.jb;
+        //s.sp;
+        s.salary(bs,sp,jb);
+        
+    }
+}
